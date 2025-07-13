@@ -54,3 +54,50 @@ cd ~/my-node-app-server
 #mkdir: Creates a new directory called my-node-app in your home directory.
 
 #cd: Changes into that directory.
+```
+## 4. Initialze the project 
+
+```
+npm init -y 
+
+#Creates a package.json file with default values.
+```
+```
+npm install express
+
+#Downloads and installs express, a lightweight web framework for Node.js.
+
+#Adds it to your dependencies in package.json.
+
+Note: you may get an error because the system might be blocking the connection to the npm registry due to SSL Certificate Issue. 
+```
+![alt text](image-8.png)
+
+- Temporarily Disable Strict SSL
+```
+npm config set strict-ssl false
+
+#then Retry; 
+npm install express
+```
+You should not be able to see the following output:
+![alt text](image-9.png)
+
+## Create the App Server File 
+
+```
+nano appserver.js
+
+inside appserver.js
+const express = require('express'); // Loads Express module
+const app = express();              // Creates an Express app
+const PORT = 3000;                  // Defines the port
+
+app.get('/', (req, res) => {
+  res.send('RHEL 9.5 Node.js App Server!');
+}); // App Server Responds "/"
+
+app.listen(PORT, () => {
+  console.log(`App Server is running on http://localhost:${PORT}`);
+}); // Starts the server and listens on the defined port
+```
