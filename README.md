@@ -83,7 +83,7 @@ npm install express
 You should not be able to see the following output:
 ![alt text](image-9.png)
 
-## Create the App Server File 
+## 5. Create the App Server File 
 
 ```
 nano appserver.js
@@ -101,3 +101,23 @@ app.listen(PORT, () => {
   console.log(`App Server is running on http://localhost:${PORT}`);
 }); // Starts the server and listens on the defined port
 ```
+## 6. Run the App Server 
+```
+node appserver.js
+```
+![alt text](image-13.png)
+
+## 7. Allow App Port Through Firewall 
+```
+sudo firewall-cmd --add-port=3000/tcp -- permanent 
+sudo firewall-cmd --reload
+
+#Opens TCP port 3000 permanently in the firewall (used by your app).
+
+#reload applies the new rule.
+```
+
+## 8. Final - Test the App Server via localhost
+
+http://localhost:3000
+![alt text](image-14.png)
