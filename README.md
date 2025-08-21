@@ -113,4 +113,4 @@ sudo firewall-cmd --reload
 http://localhost:3000
 
 ## Node.js App Server Architecture on RHEL 9.5
-
+![alt text](image.png)
