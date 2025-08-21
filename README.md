@@ -10,7 +10,6 @@ sudo dnf update -y
 
 #-y: Automatically answers "yes" to all prompts.
 ```
-![alt text](image.png)
 
 ## 2. Enable and Install Node.js
 ```
@@ -18,7 +17,6 @@ sudo dnf module list nodejs
 
 #Lists all available streams (versions) of Node.js
 ```
-![alt text](image-1.png)
 
 ```
 sudo dnf module enable nodejs:18 -y
@@ -27,15 +25,12 @@ sudo dnf module enable nodejs:18 -y
 
 #-y: Confirms the enablement.
 ```
-![alt text](image-2.png)
 
 ```
 sudo dnf install nodejs -y
 
 #Installs Node.js and its package manager
 ```
-![alt text](image-3.png)
-![alt text](image-4.png)
 
 ```
 node -v
@@ -43,7 +38,6 @@ npm - v
 
 #Verifies installation by printing the installed versions of Node.js and npm.
 ```
-![alt text](image-6.png)
 
 ## 3. Create a Project Directory 
 
@@ -71,7 +65,6 @@ npm install express
 
 Note: you may get an error because the system might be blocking the connection to the npm registry due to SSL Certificate Issue. 
 ```
-![alt text](image-8.png)
 
 - Temporarily Disable Strict SSL
 ```
@@ -81,7 +74,6 @@ npm config set strict-ssl false
 npm install express
 ```
 You should not be able to see the following output:
-![alt text](image-9.png)
 
 ## 5. Create the App Server File 
 
@@ -105,7 +97,6 @@ app.listen(PORT, () => {
 ```
 node appserver.js
 ```
-![alt text](image-13.png)
 
 ## 7. Allow App Port Through Firewall 
 ```
@@ -120,8 +111,6 @@ sudo firewall-cmd --reload
 ## 8. Final - Test the App Server via localhost
 
 http://localhost:3000
-![alt text](image-14.png)
 
 ## Node.js App Server Architecture on RHEL 9.5
 
-![alt text](image-15.png)
